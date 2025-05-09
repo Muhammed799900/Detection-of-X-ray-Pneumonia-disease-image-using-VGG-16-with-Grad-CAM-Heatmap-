@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pneumonia Detection</title>
+</head>
+<body>
+    <h2>Pneumonia Detection using VGG-16</h2>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="Upload and Predict">
+    </form>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <p>Prediction: {{ prediction }}</p>
+    <p>Confidence: {{ confidence }}%</p>
+    <h3>Grad-CAM Visualization:</h3>
+    <img src="{{ gradcam_path }}" alt="Grad-CAM Heatmap">
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>
